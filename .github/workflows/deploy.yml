@@ -1,4 +1,6 @@
 name: GitHub Actions test
+permissions:
+  contents: write
 run-name: test1
 on: [push]
 jobs:
