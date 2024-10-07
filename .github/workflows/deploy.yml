@@ -1,11 +1,11 @@
 name: GitHub Actions test
-permissions:
-  contents: write
 run-name: test1
 on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: windows-latest
+    permissions:
+      contents: write
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
