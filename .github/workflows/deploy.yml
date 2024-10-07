@@ -1,6 +1,9 @@
 name: Release VSCode Extension test
 run-name: test1
-on: [push]
+on:
+  push:
+    tags:
+      - v0.*
 jobs:
   Explore-GitHub-Actions:
     runs-on: windows-latest
