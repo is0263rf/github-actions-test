@@ -10,10 +10,11 @@ jobs:
       - run: npm i
       - run: npm i -g @vscode/vsce
       - run: vsce package
-      - name: Upload a Build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          path: hello-extension*.vsix
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            hello-extension*.vsix
+            LICENSE.txt
+            README.md
