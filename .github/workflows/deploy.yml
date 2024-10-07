@@ -1,0 +1,16 @@
+name: GitHub Actions test
+run-name: test1
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: npm i
+      - run: npm i -g @vscode/vsce
+      - run: vsce package
+      - name: Upload a Build artifact
+        uses: actions/upload-artifact@4.4.0
+        with:
+          path: hello-extension*.vsix
