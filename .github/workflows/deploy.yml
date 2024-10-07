@@ -14,3 +14,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: hello-extension*.vsix
+      - name: Release
+        uses: softprops/action-gh-release@v2
