@@ -1,9 +1,14 @@
-name: GitHub Actions test
+name: Release VSCode Extension test
 run-name: test1
-on: [push]
+on:
+  push:
+    tags:
+      - v0.*
 jobs:
   Explore-GitHub-Actions:
     runs-on: windows-latest
+    permissions:
+      contents: write
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
@@ -16,5 +21,3 @@ jobs:
         with:
           files: |
             hello-extension*.vsix
-            LICENSE.txt
-            README.md
